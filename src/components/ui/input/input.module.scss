@@ -1,7 +1,11 @@
 .inputContainer {
   position: relative;
-  width: 100%;
+  width: 350px;
   margin-bottom: 1rem;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 
   .input {
     width: 100%;

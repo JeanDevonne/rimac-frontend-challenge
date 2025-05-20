@@ -131,9 +131,6 @@ export default function HomePage() {
                   },
                 })}
                 error={errors.docNumber}
-                style={{
-                  width: '350px',
-                }}
               />
               <Input
                 id="phoneNumber"
@@ -152,9 +149,6 @@ export default function HomePage() {
                       : "* Ingresa un número de celular válido",
                 })}
                 error={errors.phoneNumber}
-                style={{
-                  width: '350px',
-                }}
               />
               <Checkbox
                 id="pp"

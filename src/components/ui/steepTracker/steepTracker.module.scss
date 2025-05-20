@@ -116,6 +116,10 @@
     }
   }
 
+  @media (max-width: map.get($breakpoints, 'mobile')) {
+    grid-template-columns: 1fr 2fr;
+  }
+
   &__bar {
     width: 100%;
     height: 8px;

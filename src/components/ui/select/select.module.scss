@@ -1,13 +1,25 @@
+@use 'sass:map';
+@use '../../../styles/settings' as *;
+
+
 .selectContainer {
   position: relative;
-  width: 100%;
+  width: 350px;
   margin-bottom: 1rem;
+
+  @media (max-width: map.get($breakpoints, 'mobile')) {
+    width: 100%;
+  }
 
   .inputWrapper {
     position: relative;
     display: flex;
     align-items: center;
     width: 350px;
+
+    @media (max-width: map.get($breakpoints, 'mobile')) {
+      width: 100%;
+    }
   }
 
   .select {
@@ -37,6 +49,7 @@
   .input {
     flex: 1;
     height: 56px;
+    width: 100%;
     padding: 1rem;
     padding-bottom: 0;
     border: 1px solid #000000;
