@@ -71,22 +71,22 @@ export default function HomePage() {
         <picture className={styles.stack__item__image}>
           <source 
             media="(max-width: 767px)"
-            srcSet="/src/assets/images/heroes/familia-mobile@1x.webp 1x,
-            /src/assets/images/heroes/familia-mobile@2x.webp 2x"
+            srcSet="/assets/images/heroes/familia-mobile@1x.webp 1x,
+            /assets/images/heroes/familia-mobile@2x.webp 2x"
             type="image/webp"
             sizes="(max-width: 767px) 100vw, 480px"
           />
 
           <source 
             media="(min-width: 768px)"
-            srcSet="/src/assets/images/heroes/familia-desktop@1x.webp 1x,
-            /src/assets/images/heroes/familia-desktop@2x.webp 2x"
+            srcSet="/assets/images/heroes/familia-desktop@1x.webp 1x,
+            /assets/images/heroes/familia-desktop@2x.webp 2x"
             type="image/webp"
             sizes="(min-width: 768px) 480px, 100vw"
           />
 
           <img 
-            src="/src/assets/images/heroes/familia-desktop@1x.webp"
+            src="/assets/images/heroes/familia-desktop@1x.webp"
             alt="Padre, madre e hijo sonriendo juntos en un ambiente cálido y familiar"
             loading="eager"
             width="480"

@@ -5,7 +5,7 @@ export default function Header() {
     <div className={styles.header}>
       <div className={styles.header__container}>
         <img 
-          src="/src/assets/images/logo_positive.svg" 
+          src="/assets/images/logo_positive.svg" 
           alt="logo de Rimac Seguros version positivo"
           width="74"
           height="36"
@@ -15,7 +15,7 @@ export default function Header() {
         <div className={styles.header__cta}>
           <span className={styles.header__cta__text}>¡Compra por este medio!</span>
           <img
-            src="/src/assets/images/icons/GlTelephoneSolid.svg"
+            src="/assets/images/icons/GlTelephoneSolid.svg"
             alt="icono de telefono"
             width="24"
             height="24"
