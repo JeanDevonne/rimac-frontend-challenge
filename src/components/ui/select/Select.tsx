@@ -34,25 +34,27 @@ const Select = ({
   return (
     <div className={styles.selectContainer}>
       <div className={styles.inputWrapper}>
-        <select 
-          id={`${id}-select`}
-          className={styles.select}
-          value={selectorValue}
-          onChange={(e: ChangeEvent<HTMLSelectElement>) =>
-            onSelectorChange(e.target.value)
-          }
-          aria-describedby={error ? `${id}-error` : undefined}
-        >
-          {documentTypes.map((type) => (
-            <option 
-              key={type.value} 
-              value={type.value}
-              aria-selected={selectorValue === type.value}
-            >
-              {type.label}
-            </option>
-          ))}
-        </select>
+        <label htmlFor={`${id}-select`}>
+          <select 
+            id={`${id}-select`}
+            className={styles.select}
+            value={selectorValue}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              onSelectorChange(e.target.value)
+            }
+            aria-describedby={error ? `${id}-error` : undefined}
+          >
+            {documentTypes.map((type) => (
+              <option 
+                key={type.value} 
+                value={type.value}
+                aria-selected={selectorValue === type.value}
+              >
+                {type.label}
+              </option>
+            ))}
+          </select>
+        </label>
         <input
           {...validators}
           id={id}
