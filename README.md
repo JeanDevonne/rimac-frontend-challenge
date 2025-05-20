@@ -24,7 +24,7 @@ Este proyecto es una prueba técnica desarrollada para Rimac, implementando una 
 
 ## 🚀 Demo
 
-[Ver Demo en Vercel](https://rimac-frontend-challenge.vercel.app)
+[Ver Demo en Vercel](https://rimac-frontend-challenge-theta.vercel.app/)
 
 ## 🏗️ Instalación
 
