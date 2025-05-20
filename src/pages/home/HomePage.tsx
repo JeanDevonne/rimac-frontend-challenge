@@ -74,7 +74,7 @@ export default function HomePage() {
             srcSet="/assets/images/heroes/familia-mobile@1x.webp 1x,
             /assets/images/heroes/familia-mobile@2x.webp 2x"
             type="image/webp"
-            sizes="(max-width: 767px) 100vw, 480px"
+            sizes="100vw"
           />
 
           <source 
@@ -82,7 +82,7 @@ export default function HomePage() {
             srcSet="/assets/images/heroes/familia-desktop@1x.webp 1x,
             /assets/images/heroes/familia-desktop@2x.webp 2x"
             type="image/webp"
-            sizes="(min-width: 768px) 480px, 100vw"
+            sizes="480px"
           />
 
           <img 
@@ -94,6 +94,7 @@ export default function HomePage() {
             fetchPriority="high"
             decoding="async"
             sizes="(min-width: 768px) 480px, 100vw"
+            style={{ contentVisibility: 'auto' }}
           />
         </picture>
 

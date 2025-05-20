@@ -10,17 +10,30 @@
     <!-- Preload critical assets -->
     <link 
       rel="preload" 
-      href="/src/assets/images/heroes/familia-desktop@1x.webp" 
+      href="/assets/images/heroes/familia-desktop@1x.webp" 
       as="image" 
       type="image/webp"
       fetchpriority="high"
+      imagesizes="480px"
+      imagesrcset="/assets/images/heroes/familia-desktop@1x.webp 1x, /assets/images/heroes/familia-desktop@2x.webp 2x"
     />
     <link 
       rel="preload" 
-      href="/src/assets/images/logo_positive.svg" 
+      href="/assets/images/heroes/familia-mobile@1x.webp" 
+      as="image" 
+      type="image/webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+      imagesizes="100vw"
+      imagesrcset="/assets/images/heroes/familia-mobile@1x.webp 1x, /assets/images/heroes/familia-mobile@2x.webp 2x"
+    />
+    <link 
+      rel="preload" 
+      href="/assets/logo_positive.svg" 
       as="image" 
       type="image/svg+xml"
       fetchpriority="high"
+      crossorigin="anonymous"
     />
   </head>
   <body>
@@ -28,3 +41,4 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
