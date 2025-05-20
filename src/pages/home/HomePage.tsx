@@ -71,16 +71,16 @@ export default function HomePage() {
         <picture className={styles.stack__item__image}>
           <source 
             media="(max-width: 767px)"
-            srcSet="/assets/images/heroes/familia-mobile@1x.webp 1x,
-            /assets/images/heroes/familia-mobile@2x.webp 2x"
+            srcSet="/assets/images/heroes/familia-mobile@1x.webp 375w,
+            /assets/images/heroes/familia-mobile@2x.webp 750w"
             type="image/webp"
             sizes="100vw"
           />
 
           <source 
             media="(min-width: 768px)"
-            srcSet="/assets/images/heroes/familia-desktop@1x.webp 1x,
-            /assets/images/heroes/familia-desktop@2x.webp 2x"
+            srcSet="/assets/images/heroes/familia-desktop@1x.webp 480w,
+            /assets/images/heroes/familia-desktop@2x.webp 960w"
             type="image/webp"
             sizes="480px"
           />
@@ -94,7 +94,13 @@ export default function HomePage() {
             fetchPriority="high"
             decoding="async"
             sizes="(min-width: 768px) 480px, 100vw"
-            style={{ contentVisibility: 'auto' }}
+            style={{ 
+              contentVisibility: 'auto',
+              width: '100%',
+              height: 'auto',
+              aspectRatio: '480/560',
+              objectFit: 'cover'
+            }}
           />
         </picture>
 
