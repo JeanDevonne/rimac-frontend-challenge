@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import styles from './select.module.scss';
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
 
@@ -11,6 +11,7 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onSelectorChange: (value: string) => void; 
   error?: FieldError;
   validators?: UseFormRegisterReturn;
+  id: string;
 }
 
 const documentTypes = [
@@ -27,26 +28,34 @@ const Select = ({
   onSelectorChange,
   error,
   validators,
+  id,
 }: SelectProps) => {
 
   return (
     <div className={styles.selectContainer}>
       <div className={styles.inputWrapper}>
         <select 
+          id={`${id}-select`}
           className={styles.select}
           value={selectorValue}
           onChange={(e: ChangeEvent<HTMLSelectElement>) =>
             onSelectorChange(e.target.value)
           }
+          aria-describedby={error ? `${id}-error` : undefined}
         >
           {documentTypes.map((type) => (
-            <option key={type.value} value={type.value}>
+            <option 
+              key={type.value} 
+              value={type.value}
+              aria-selected={selectorValue === type.value}
+            >
               {type.label}
             </option>
           ))}
         </select>
         <input
           {...validators}
+          id={id}
           className={`${styles.input} ${className || ''}`}
           onChange={(e) => onInputChange(e.target.value)}
           placeholder=" "
@@ -54,10 +63,19 @@ const Select = ({
           maxLength={documentTypes.find(type => type.value === selectorValue).maxLength}
           inputMode="numeric"
           pattern="[0-9]*"
+          aria-invalid={!!error}
         />
-        <label className={styles.label}>{label}</label>
+        <label htmlFor={id} className={styles.label}>{label}</label>
       </div>
-      {error && <span className={styles.errorMessage}>{error.message}</span>}
+      {error && (
+        <span 
+          className={styles.errorMessage} 
+          id={`${id}-error`}
+          role="alert"
+        >
+          {error.message}
+        </span>
+      )}
     </div>
   );
 };

@@ -11,6 +11,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputValue?: string;
   validators?: UseFormRegisterReturn;
   onInputChange: (value: string) => void;
+  id: string;
 }
 
 export const Input = ({ 
@@ -22,6 +23,7 @@ export const Input = ({
   inputValue,
   validators,
   onInputChange,
+  id,
   ...props 
 }: InputProps) => {
 
@@ -30,13 +32,14 @@ export const Input = ({
       <input
         {...props}
         {...validators}
+        id={id}
         value={inputValue}
         maxLength={maxLength}
         className={`${styles.input} ${className || ''}`}
         onChange={(e) => onInputChange(e.target.value)}
         placeholder=" "
       />
-      <label className={styles.label}>{label}</label>
+      <label htmlFor={id} className={styles.label}>{label}</label>
       {error && <span className={styles.errorMessage}>{error.message}</span>}
     </div>
   );

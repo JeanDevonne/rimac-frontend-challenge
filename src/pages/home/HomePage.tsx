@@ -105,6 +105,7 @@ export default function HomePage() {
             <p className={styles.stack__item__form__text}>Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100% online.</p>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Select
+                id="docType"
                 label="Nro. de documento"
                 selectorValue={watch("docType")}
                 inputValue={watch("docNumber")}
@@ -129,6 +130,7 @@ export default function HomePage() {
                 }}
               />
               <Input
+                id="phoneNumber"
                 label="Celular"
                 inputType="number"
                 maxLength={9}
