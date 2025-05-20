@@ -92,10 +92,9 @@ export default function HomePage() {
             width="480"
             height="560"
             fetchPriority="high"
-            decoding="async"
+            decoding="sync"
             sizes="(min-width: 768px) 480px, 100vw"
             style={{ 
-              contentVisibility: 'auto',
               width: '100%',
               height: 'auto',
               aspectRatio: '480/560',
