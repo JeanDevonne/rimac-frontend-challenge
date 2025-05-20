@@ -11,18 +11,39 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        passes: 2
+      },
+      mangle: true,
+      format: {
+        comments: false
       }
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          form: ['react-hook-form'],
-          ui: ['sonner', 'swiper']
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('react-router')) {
+              return 'vendor-router';
+            }
+            if (id.includes('swiper')) {
+              return 'vendor-swiper';
+            }
+            if (id.includes('sonner')) {
+              return 'vendor-sonner';
+            }
+            return 'vendor';
+          }
         }
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000,
+    target: 'esnext',
+    sourcemap: false
   },
   css: {
     preprocessorOptions: {
