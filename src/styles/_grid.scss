@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'settings' as *;
+
+/* Bloque: contenedor principal */
+.grid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $gutter;
+  box-sizing: border-box;
+
+  /* Elemento: fila */
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+  }
+
+  /* Elemento: columna (base) */
+  &__col {
+    padding-left: $gutter;
+    padding-right: $gutter;
+    box-sizing: border-box;
+    width: 100%;
+
+    /* Modificadores para mobile (4 cols) */
+    @for $i from 1 through map.get($grid-columns, 'mobile') {
+      &--mobile-#{$i} {
+        width: math.percentage(math.div($i, map.get($grid-columns, 'mobile')));
+      }
+    }
+
+    /* Modificadores para desktop (12 cols) */
+    @media (min-width: map.get($breakpoints, 'desktop')) {
+      @for $i from 1 through map.get($grid-columns, 'desktop') {
+        &--desktop-#{$i} {
+          width: math.percentage(math.div($i, map.get($grid-columns, 'desktop')));
+        }
+      }
+    }
+  }
+}

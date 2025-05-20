@@ -1,0 +1,76 @@
+@use 'sass:map';
+@use '../../../styles/settings' as *;
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  user-select: none;
+  margin-bottom: 8px;
+
+  &.error {
+    .checkboxInput {
+      border-color: #ff4d4f;
+    }
+
+    .checkboxLabel {
+      color: #ff4d4f;
+    }
+  }
+}
+
+.checkboxInput {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #969696;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkboxInput:checked {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.checkboxInput:checked::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxInput:disabled {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+.checkboxInput:disabled + .checkboxLabel {
+  color: #999;
+  cursor: not-allowed;
+}
+
+.checkboxLabel {
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+
+  @media (max-width: map.get($breakpoints, 'tablet')) {
+    font-size: 14px;
+  }
+}
+
+.checkboxInput:focus {
+  box-shadow: 0 0 0 2px rgba(73, 73, 73, 0.25);
+} 

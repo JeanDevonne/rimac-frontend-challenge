@@ -1,0 +1,47 @@
+.inputContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  .input {
+    width: 100%;
+    height: 56px;
+    padding: 1rem;
+    padding-bottom: 0;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: white;
+    color: #1a202c;
+
+    &:focus {
+      outline: none;
+      border-color: #000000;
+      box-shadow: 0 0 0 2px rgba(192, 192, 192, 0.459);
+    }
+
+    &:focus + .label,
+    &:not(:placeholder-shown) + .label {
+      transform: translateY(-.8rem) scale(0.85);
+      color: #000000;
+    }
+  }
+
+  .label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #a0a0a0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    transform-origin: left top;
+  }
+
+  .errorMessage {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+} 

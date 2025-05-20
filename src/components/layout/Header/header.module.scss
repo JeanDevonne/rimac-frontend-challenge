@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use '../../../styles/settings' as *;
+
+.header {
+  width: 100%;
+  height: $header-height;
+  background-color: transparent;
+
+  &__container {
+    width: 100%;
+    max-width: map.get($breakpoints, 'desktop');
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &__text {
+      font-size: 12px;
+      line-height: 16px;
+      font-family: $font-family;
+      font-weight: map.get($font-weights-lato, 'semibold');
+
+      @media (max-width: map.get($breakpoints, 'tablet')) {
+        display: none;
+      }
+    }
+
+    &__phone {
+      font-size: 18px;
+      line-height: 20px;
+      font-family: $font-family;
+      font-weight: map.get($font-weights-lato, 'bold');
+    }
+    
+  }
+}

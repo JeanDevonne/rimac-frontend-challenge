@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "types": ["vite/client"],
+    "lib": ["ES2015", "DOM"],
+  }
+}

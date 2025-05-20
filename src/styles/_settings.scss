@@ -1,0 +1,52 @@
+// Colores
+$colors: (
+  'primary': #002b45,
+  'secondary': #fdba2e,
+  'text': #141938,
+  'light': #f8f9fa
+);
+
+// Tipografía
+$font-family: 'BR Sonoma', sans-serif;
+$font-weights: (
+  'regular': 400,
+  'semibold': 600,
+  'bold': 700
+);
+
+$font-family-lato: 'Lato', sans-serif;
+$font-weights-lato: (
+  'regular': 400,
+  'bold': 700,
+  'black': 900
+);
+
+// Breakpoints (desktop-first)
+$breakpoints: (
+  'desktop': 1200px,
+  'tablet': 767px,
+  'mobile': 375px
+);
+
+// Número de columnas
+$grid-columns: (
+  'mobile': 4,
+  'desktop': 12
+);
+
+// Espaciados (gutter)
+$gutter: 16px;
+
+// Espaciado unitario
+$spacing-unit: 8px;
+
+// Espaciados (0-3)
+$spacings: (
+  0: 0,
+  1: $spacing-unit,
+  2: $spacing-unit * 2,
+  3: $spacing-unit * 3
+);
+
+$header-height: 64px;
+$footer-height: 106px;

@@ -1,0 +1,56 @@
+@use 'sass:map';
+@use '../../../styles/settings' as *;
+
+.bubblesContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  width: 300px;
+  height: 400px;
+  will-change: transform;
+  animation: float 4s infinite ease-in-out;
+}
+
+.bubbleLeft {
+  left: -200px;
+  bottom: 100px;
+  animation-name: floatLeft;
+  background-color: #9f01ad;
+
+  @media (max-width: map.get($breakpoints, 'tablet')) {
+    left: -400px;
+  }
+}
+
+.bubbleRight  {
+  right: -200px;
+  top: 100px;
+  animation-name: floatRight;
+  background-color: #018a6c;
+
+  @media (max-width: map.get($breakpoints, 'tablet')) {
+    right: -400px;
+  }
+
+}
+
+@keyframes floatLeft {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(50px, -300px) scale(1); }
+}
+
+@keyframes floatRight {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-50px, 300px) scale(1); }
+}

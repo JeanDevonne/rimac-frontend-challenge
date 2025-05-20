@@ -1,0 +1,11 @@
+@use 'settings' as *;
+// Importaciones
+@use 'fonts';
+@use 'generic';
+@use 'grid';
+
+// Estilos globales
+body {
+  margin: 0;
+  font-family: $font-family;
+}

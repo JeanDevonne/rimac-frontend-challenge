@@ -1,0 +1,11 @@
+@use '../../../styles/settings' as *;
+
+.layout {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.content {
+  min-height: calc(100dvh - $header-height - $footer-height);
+}

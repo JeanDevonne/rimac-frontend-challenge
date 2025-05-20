@@ -1,0 +1,78 @@
+.selectContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 350px;
+  }
+
+  .select {
+    height: 56px;
+    padding: 0 1rem;
+    border: 1px solid #000000;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 1rem;
+    background-color: white;
+    color: #1a202c;
+    cursor: pointer;
+    min-width: 100px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+
+    &:focus {
+      outline: none;
+      border-color: #000000;
+    }
+  }
+
+  .input {
+    flex: 1;
+    height: 56px;
+    padding: 1rem;
+    padding-bottom: 0;
+    border: 1px solid #000000;
+    border-radius: 0 8px 8px 0;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: white;
+    color: #1a202c;
+
+    &:focus {
+      outline: none;
+      border-color: #000000;
+      box-shadow: 0 0 0 2px rgba(192, 192, 192, 0.459);
+    }
+
+    &:focus + .label,
+    &:not(:placeholder-shown) + .label {
+      transform: translateY(-.8rem) scale(0.85);
+      color: #000000;
+    }
+  }
+
+  .label {
+    position: absolute;
+    left: 120px; // Adjust based on select width
+    top: 1rem;
+    color: #a0a0a0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    transform-origin: left top;
+  }
+
+  .errorMessage {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+} 
