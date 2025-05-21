@@ -69,6 +69,10 @@
   @media (max-width: map.get($breakpoints, 'tablet')) {
     font-size: 14px;
   }
+
+  @media (max-width: map.get($breakpoints, 'mobile')) {
+    max-width: 250px;
+  }
 }
 
 .checkboxInput:focus {
