@@ -1,0 +1,13 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow protected routes
+Disallow: /planes
+Disallow: /resumen
+
+# Sitemap location
+Sitemap: https://rimac-frontend-challenge-theta.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 
